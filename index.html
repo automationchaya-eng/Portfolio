@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -702,31 +703,6 @@
             color: var(--black);
         }
         
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1px;
-        }
-        
-        .social-link {
-            width: 60px;
-            height: 60px;
-            background: var(--white);
-            color: var(--black);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s;
-            font-size: 18px;
-        }
-        
-        .social-link:hover {
-            background: var(--black);
-            color: var(--white);
-        }
-        
         /* Footer */
         .footer {
             background: var(--black);
@@ -1009,7 +985,7 @@
             <div class="section-header">
                 <div class="section-number">01 / פרויקטים</div>
                 <h2 class="section-title">עבודות נבחרות</h2>
-                <p class="section-subtitle">מקרי מבחן שמציגים את הגישה הרב-תחומית</p>
+                <p class="section-subtitle">מדגם עבודות המייצגות את הגישה הרב-תחומית</p>
             </div>
             
             <div class="projects-grid">
@@ -1135,8 +1111,8 @@
                 <div class="skill-item">N8N</div>
                 <div class="skill-item">MAKE</div>
                 <div class="skill-item">FIGMA</div>
-                <div class="skill-item">LOVABLE</div>
-                <div class="skill-item">SQL</div>
+                <div class="skill-item">RAV-MESER</div>
+                <div class="skill-item">SQL SERVER</div>
                 <div class="skill-item">ADOBE SUITE</div>
                 <div class="skill-item">NEDARIM+</div>
                 <div class="skill-item skill-next-tool">
@@ -1165,7 +1141,7 @@
                 
                 <div class="skill-category">
                     <h3>עיצוב ותקשורת ויזואלית</h3>
-                    <p>עיצוב גרפי מקצועי, Photoshop, Illustrator, InDesign, Premiere. יכולת לתרגם רעיונות מופשטים לביטוי ויזואלי ברור ואפקטיבי.</p>
+                    <p>ידע בעיצוב גרפי, Photoshop, Illustrator, Premiere. יכולת לתרגם רעיונות מופשטים לביטוי ויזואלי ברור ואפקטיבי.</p>
                 </div>
             </div>
         </div>
@@ -1201,8 +1177,8 @@
                 
                 <div class="timeline-item">
                     <div class="timeline-years">6 שנים</div>
-                    <h3 class="timeline-title">מעצבת גרפית ומולטימדיה</h3>
-                    <p class="timeline-desc">פתרונות ויזואליים לעסקים, שליטה מלאה בתוכנות אדובי ויצירת תוכן שיווקי מקצועי</p>
+                    <h3 class="timeline-title">מערכות  ומולטימדיה</h3>
+                    <p class="timeline-desc">פיתוח תכני מולטימדיה, בניית מצגות ותסריטים, ועבודה עם חומרים ויזואליים, ככלי להעברת מסר ותהליך</p>
                 </div>
             </div>
         </div>
@@ -1312,13 +1288,9 @@
             
             <div class="cta-buttons">
                 <button class="btn btn-primary" onclick="openContactForm()">צור קשר</button>
-                <button class="btn btn-secondary">הורד קורות חיים</button>
-            </div>
-            
-            <div class="social-links">
-                <a href="#" class="social-link">in</a>
-                <a href="#" class="social-link">@</a>
-                <a href="#" class="social-link">tel</a>
+                <a class="btn btn-secondary" href="Portfolio Star-Up.pdf" target="_blank" rel="noopener">
+                    הורד קורות חיים
+                </a>
             </div>
         </div>
     </section>
@@ -1443,8 +1415,7 @@
         
         // Interactive Grid Effect - Simple and Working
         const hero = document.querySelector('.hero');
-        const heroGrid = document.querySelector('.hero-grid');
-        
+
         // Create interactive overlay grid
         const interactiveGrid = document.createElement('div');
         interactiveGrid.style.position = 'absolute';
@@ -1535,3 +1506,4 @@
     </script>
 </body>
 </html>
+```
