@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="חיה שטרן - ארכיטקטית מערכות דיגיטל עם 20+ שנות ניסיון. מומחית AI, אוטומציה, Vibe Coding ופיתוח מערכות.">
+    <meta property="og:title" content="חיה שטרן | Start-Up - ארכיטקטית מערכות דיגיטל">
+    <meta property="og:description" content="בונה פתרונות מערכתיים חכמים. מומחית AI, אוטומציה ו-Vibe Coding.">
+    <meta property="og:type" content="website">
     <title>חיה שטרן | Start-Up - ארכיטקטית מערכות דיגיטל</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Hebrew:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -851,6 +855,62 @@
             border-right: 4px solid #c00;
         }
         
+        /* Vibe Coding Special Skill */
+        .skill-item.skill-vibe-coding {
+            background: #0d0000;
+            color: #ff0000;
+            position: relative;
+            overflow: hidden;
+            animation: vibeGlow 1.2s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: default;
+            padding: 24px 12px;
+        }
+
+        .skill-item.skill-vibe-coding:hover {
+            background: #220000;
+            color: #ff2222;
+        }
+
+        @keyframes vibeGlow {
+            0%, 100% {
+                background: #0d0000;
+                box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.2), 0 0 12px rgba(255, 0, 0, 0.15);
+            }
+            50% {
+                background: #260000;
+                box-shadow: inset 0 0 35px rgba(255, 0, 0, 0.45), 0 0 25px rgba(255, 0, 0, 0.25);
+            }
+        }
+
+        .vibe-coding-text {
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            text-shadow: 0 0 8px rgba(255, 0, 0, 0.9), 0 0 20px rgba(255, 0, 0, 0.5);
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .vibe-fire {
+            font-size: 18px;
+            display: inline-block;
+            animation: fireFlicker 0.6s ease-in-out infinite alternate;
+            line-height: 1;
+        }
+
+        .vibe-fire:last-child {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fireFlicker {
+            0% { transform: scale(0.85) translateY(2px) rotate(-8deg); }
+            100% { transform: scale(1.2) translateY(-3px) rotate(8deg); }
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .container {
@@ -914,6 +974,92 @@
                 left: 12px;
             }
         }
+        /* Header scroll effect */
+        .header.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Active nav link */
+        .nav a.active {
+            color: var(--accent);
+        }
+
+        /* Hamburger button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            transition: all 0.3s;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Mobile nav overlay */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 2px solid var(--black);
+            z-index: 999;
+            flex-direction: column;
+        }
+
+        .mobile-nav.open {
+            display: flex;
+        }
+
+        .mobile-nav a {
+            padding: 20px 24px;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 1px solid var(--gray-100);
+            transition: all 0.2s;
+        }
+
+        .mobile-nav a:last-child { border-bottom: none; }
+
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            background: var(--black);
+            color: var(--white);
+            padding-right: 32px;
+        }
+
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .hamburger { display: flex; }
+        }
     </style>
 </head>
 <body>
@@ -937,9 +1083,21 @@
                     <a href="#experience">ניסיון</a>
                     <a href="#contact">צור קשר</a>
                 </nav>
+                <button class="hamburger" id="hamburger" aria-label="תפריט">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#projects">פרויקטים</a>
+        <a href="#skills">כישורים</a>
+        <a href="#experience">ניסיון</a>
+        <a href="#contact">צור קשר</a>
+    </nav>
 
     <!-- Hero -->
     <section class="hero">
@@ -1088,8 +1246,67 @@
                         </div>
                     </div>
                 </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">04</div>
+                        <div class="project-info">
+                            <h3 class="project-title">עתודה - דף נחיתה</h3>
+                            <p class="project-subtitle">דף נחיתה ממיר לקורסי עתודה</p>
+                            <a href="https://hishtmby.org.il/Tashpav/Atuda/Landing/Html/atuda_v1.html" target="_blank" class="project-link">
+                                צפו בדף
+                                <span>→</span>
+                            </a>
+                            <p class="project-role">עיצוב, פיתוח ואופטימיזציה שיווקית</p>
+                        </div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <h4>האתגר</h4>
+                            <p>יצירת דף נחיתה ממיר עבור קורסי עתודה עם דגש על בהירות המסר ומקסום הפניות</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>הפתרון</h4>
+                            <p>דף נחיתה רספונסיבי עם מבנה שיווקי מדויק, חיבור לאוטומציה וצבירת לידים</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>התוצאה</h4>
+                            <p>דף ממיר עם חוויית משתמש מצוינת המייצר פניות איכותיות לקורסים</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">05</div>
+                        <div class="project-info">
+                            <h3 class="project-title">מקום לדעת - אביב</h3>
+                            <p class="project-subtitle">מערכת רכישת קורסים לעונת האביב</p>
+                            <a href="https://hishtmby.org.il/PlaceToKnow/spring.php" target="_blank" class="project-link">
+                                צפו במערכת
+                                <span>→</span>
+                            </a>
+                            <p class="project-role">ארכיטקטית מערכת ובניית פתרון מלא</p>
+                        </div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <h4>האתגר</h4>
+                            <p>הפעלת מערכת רכישת קורסים לעונת האביב עם תמחור דינמי וניהול הרשמה מלא</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>הפתרון</h4>
+                            <p>מערכת מותאמת עם סליקה, ניהול מלאי קורסים ואוטומציה מלאה של תהליך הרישום</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>התוצאה</h4>
+                            <p>מערכת עצמאית ומהירה לרכישת קורסים עם אישורים אוטומטיים וסנכרון ל-CRM</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
+
             <div class="project-note">
                 <strong>הערה:</strong> מוצגים כאן פרויקטים ציבוריים בלבד. מעבר לפרויקטים אלו, אני מבצעת באופן שוטף עשרות הליכי אוטומציה לשיפור תהליכים שיווקיים ומשרדיים עבור לקוחות - תהליכים שאינם ניתנים להצגה פומבית.
             </div>
@@ -1107,7 +1324,11 @@
             
             <div class="skills-grid">
                 <div class="skill-item">AI TOOLS</div>
-                <div class="skill-item">VIBE CODING</div>
+                <div class="skill-item skill-vibe-coding" id="vibeCodingSkill">
+                    <span class="vibe-fire">🔥</span>
+                    <span class="vibe-coding-text">VIBE CODING</span>
+                    <span class="vibe-fire">🔥</span>
+                </div>
                 <div class="skill-item">N8N</div>
                 <div class="skill-item">MAKE</div>
                 <div class="skill-item">FIGMA</div>
@@ -1490,6 +1711,71 @@
             }, 1000);
         });
         
+        // Vibe Coding text rotation
+        const vibeTexts = ['VIBE CODING', 'CLAUDE CODE', 'CODEX', 'LOVABLE'];
+        let vibeIndex = 0;
+        const vibeEl = document.querySelector('.vibe-coding-text');
+
+        setInterval(() => {
+            vibeEl.style.opacity = '0';
+            setTimeout(() => {
+                vibeIndex = (vibeIndex + 1) % vibeTexts.length;
+                vibeEl.textContent = vibeTexts[vibeIndex];
+                vibeEl.style.opacity = '1';
+            }, 300);
+        }, 2200);
+
+        // Header scroll shadow
+        window.addEventListener('scroll', () => {
+            document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Scroll spy - highlight active nav link
+        const spySections = document.querySelectorAll('section[id]');
+        const allNavLinks = document.querySelectorAll('.nav a[href^="#"], .mobile-nav a[href^="#"]');
+
+        const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    allNavLinks.forEach(l => l.classList.remove('active'));
+                    document.querySelectorAll(`a[href="#${entry.target.id}"]`).forEach(l => l.classList.add('active'));
+                }
+            });
+        }, { rootMargin: '-35% 0px -65% 0px' });
+        spySections.forEach(s => spyObserver.observe(s));
+
+        // Scroll reveal animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.project-card, .skill-category, .timeline-item, .education-item, .testimonial-card, .section-header').forEach((el, i) => {
+            el.classList.add('reveal');
+            el.style.transitionDelay = `${(i % 4) * 60}ms`;
+            revealObserver.observe(el);
+        });
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileNav.classList.remove('open');
+            });
+        });
+
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
