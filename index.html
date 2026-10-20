@@ -1,14 +1,18 @@
-```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="חיה שטרן - ארכיטקטית מערכות דיגיטל עם 20+ שנות ניסיון. מומחית AI, אוטומציה, Vibe Coding ופיתוח מערכות.">
-    <meta property="og:title" content="חיה שטרן | Start-Up - ארכיטקטית מערכות דיגיטל">
-    <meta property="og:description" content="בונה פתרונות מערכתיים חכמים. מומחית AI, אוטומציה ו-Vibe Coding.">
+    <meta name="description" content="חיה שטרן - ארכיטקטית מערכות דיגיטל עם 20+ שנות ניסיון. דיגיטל בחמישה כוכבים: AI, אוטומציה, Vibe Coding ופיתוח מערכות.">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="חיה שטרן | Start-Up - דיגיטל בחמישה כוכבים">
+    <meta property="og:description" content="החלום שלך הוא רק ההתחלה. ארכיטקטית מערכות דיגיטל - AI, אוטומציה ו-Vibe Coding.">
     <meta property="og:type" content="website">
-    <title>חיה שטרן | Start-Up - ארכיטקטית מערכות דיגיטל</title>
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:image" content="assets/doit-dashboard.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23000'/%3E%3Cpath fill='%23FF0000' d='M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z'/%3E%3C/svg%3E">
+    <title>חיה שטרן | Start-Up - דיגיטל בחמישה כוכבים</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Hebrew:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -176,6 +180,38 @@
         
         .hero-title-accent {
             color: var(--accent);
+        }
+
+        .hero-stars {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
+
+        .hero-stars svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--accent);
+            opacity: 0;
+            transform: scale(0.4) rotate(-30deg);
+            animation: starPop 0.45s ease forwards;
+        }
+
+        .hero-stars svg:nth-child(2) { animation-delay: 0.1s; }
+        .hero-stars svg:nth-child(3) { animation-delay: 0.2s; }
+        .hero-stars svg:nth-child(4) { animation-delay: 0.3s; }
+        .hero-stars svg:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes starPop {
+            to { opacity: 1; transform: scale(1) rotate(0); }
+        }
+
+        .hero-tagline {
+            font-size: clamp(22px, 2.6vw, 32px);
+            font-weight: 300;
+            color: var(--gray-800);
+            margin: -16px 0 48px;
+            letter-spacing: -0.01em;
         }
         
         .hero-description {
@@ -400,6 +436,199 @@
             color: var(--gray-700);
         }
         
+        .project-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            margin-bottom: 12px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        /* Project media gallery */
+        .project-media {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1px;
+            background: var(--black);
+            border: 1px solid var(--black);
+            margin-bottom: 12px;
+        }
+
+        .project-media.single {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+        }
+
+        .media-item {
+            display: block;
+            padding: 0;
+            border: none;
+            background: var(--gray-100);
+            cursor: zoom-in;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .media-item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.5s ease;
+        }
+
+        .media-main {
+            grid-row: span 2;
+        }
+
+        .project-media.single .media-main {
+            grid-row: auto;
+        }
+
+        .project-media.single .media-item img {
+            aspect-ratio: 16 / 9;
+        }
+
+        .media-diagram {
+            background: var(--white);
+        }
+
+        .project-media.single .media-diagram img {
+            aspect-ratio: auto;
+            object-fit: contain;
+        }
+
+        .media-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .media-item:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: -3px;
+        }
+
+        .media-note {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 8px;
+        }
+
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--gray-200);
+            border: 1px solid var(--gray-200);
+            margin: 28px 0 40px;
+        }
+
+        .stat {
+            background: var(--white);
+            padding: 20px 24px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--black);
+            letter-spacing: -0.02em;
+        }
+
+        .stat span {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .project-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 32px;
+        }
+
+        .project-stack span {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border: 1px solid var(--gray-300);
+            color: var(--gray-700);
+            direction: ltr;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2100;
+            background: rgba(0, 0, 0, 0.92);
+            padding: 40px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            cursor: zoom-out;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: calc(100vh - 140px);
+            border: 1px solid var(--gray-700);
+            background: var(--white);
+        }
+
+        .lightbox-caption {
+            color: var(--white);
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 44px;
+            height: 44px;
+            font-size: 32px;
+            background: none;
+            border: 1px solid var(--gray-600);
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Honeypot */
+        .hp-field {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
         /* Skills Section */
         .skills-section {
             background: var(--white);
@@ -1060,6 +1289,56 @@
         @media (max-width: 1024px) {
             .hamburger { display: flex; }
         }
+
+        @media (max-width: 768px) {
+            .project-media {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+            }
+
+            .media-main {
+                grid-row: auto;
+                grid-column: span 2;
+            }
+
+            .project-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat {
+                padding: 16px;
+            }
+
+            .stat strong {
+                font-size: 22px;
+            }
+
+            .project-header {
+                gap: 20px;
+            }
+
+            .project-number {
+                font-size: 36px;
+                min-width: 44px;
+            }
+
+            .lightbox {
+                padding: 16px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1106,11 +1385,20 @@
             <div class="hero-content">
                 <div class="hero-label">ארכיטקטית מערכות דיגיטל</div>
                 
+                <div class="hero-stars" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                </div>
+
                 <h1 class="hero-title">
-                    <span class="hero-title-line">בונה פתרונות</span>
-                    <span class="hero-title-line">מערכתיים</span>
-                    <span class="hero-title-line hero-title-accent">חכמים</span>
+                    <span class="hero-title-line">דיגיטל</span>
+                    <span class="hero-title-line hero-title-accent">בחמישה כוכבים.</span>
                 </h1>
+
+                <p class="hero-tagline">החלום שלך הוא רק ההתחלה.</p>
                 
                 <p class="hero-description">
                     עם ניסיון של מעל <strong>20 שנה</strong> המשלב עיצוב גרפי, ניהול תשתיות IT, 
@@ -1147,20 +1435,237 @@
             </div>
             
             <div class="projects-grid">
+                <!-- 01 Do-it -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-number">01</div>
                         <div class="project-info">
+                            <span class="project-badge">חדש</span>
+                            <h3 class="project-title">Do-it | STAR-UP</h3>
+                            <p class="project-subtitle">מערכת ניהול שיווק ותוכן עם עוזר AI</p>
+                            <div class="project-links">
+                                <a href="https://tasks.hishtmby.org.il/guide.html" target="_blank" rel="noopener" class="project-link">
+                                    מדריך המערכת
+                                    <span>→</span>
+                                </a>
+                            </div>
+                            <p class="project-role">אפיון, ארכיטקטורה ופיתוח מלא</p>
+                        </div>
+                    </div>
+
+                    <div class="project-media">
+                        <button type="button" class="media-item media-main" data-caption="דשבורד אישי - משימות, סטטוסים והתקדמות">
+                            <img src="assets/doit-dashboard.jpg" alt="דשבורד מערכת Do-it" loading="lazy" width="1440" height="900">
+                        </button>
+                        <button type="button" class="media-item" data-caption="לוח שנה עברי-לועזי עם מפגשי קורסים שנוצרו אוטומטית">
+                            <img src="assets/doit-calendar.jpg" alt="לוח שנה במערכת Do-it" loading="lazy">
+                        </button>
+                        <button type="button" class="media-item" data-caption="לוח משימות קנבן עם עדיפויות וחסימות">
+                            <img src="assets/doit-tasks.jpg" alt="לוח משימות במערכת Do-it" loading="lazy">
+                        </button>
+                    </div>
+
+                    <div class="project-stats">
+                        <div class="stat"><strong>35</strong><span>מסכים</span></div>
+                        <div class="stat"><strong>AI</strong><span>ניתוח פגישות</span></div>
+                        <div class="stat"><strong>4</strong><span>רמות הרשאה</span></div>
+                        <div class="stat"><strong>Teams</strong><span>התראות ומשימות</span></div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <h4>האתגר</h4>
+                            <p>צוות שיווק ותוכן במרכז השתלמויות גדול ניהל קורסים, קמפיינים ועונות בין מיילים, קבצים וטבלאות - בלי תמונה אחת של מה תקוע, מי אחראי ומה מחכה לאישור.</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>הפתרון</h4>
+                            <p>מערכת אחת: יצירת קורס מייצרת אוטומטית מפגשים ושרשרת משימות מתבניות, לוח שנה עברי-לועזי, מרכז חסימות ואישורים, חיבור ל-Google Drive והתראות ל-Teams. עוזר AI מנתח תמלול פגישה ומחזיר החלטות, סיכונים ומשימות ליצירה בקליק.</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>התוצאה</h4>
+                            <p>הצוות עובד מלוח אחד שמראה בכל רגע מה נדרש ממנו, עם מנגנון מטבעות שמתגמל עבודה שוטפת בשוברי מתנה - וסרט הדרכה מוקרא שהופק אוטומטית מתוך המערכת עצמה.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-stack">
+                        <span>React</span><span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>OpenAI</span><span>MS Teams</span><span>Google Drive</span><span>Playwright</span>
+                    </div>
+                </div>
+
+                <!-- 02 Card-Club -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">02</div>
+                        <div class="project-info">
+                            <span class="project-badge">חדש</span>
+                            <h3 class="project-title">מועדון "מקום לדעת"</h3>
+                            <p class="project-subtitle">כרטיסי חבר עם QR, קבלה לאירועים ומועדון נקודות</p>
+                            <p class="project-role">אפיון, ארכיטקטורה ופיתוח מלא</p>
+                        </div>
+                    </div>
+
+                    <div class="project-media">
+                        <button type="button" class="media-item media-main" data-caption="עמדת קבלה - סריקת כרטיס ואישור כניסה בשנייה">
+                            <img src="assets/cardclub-kiosk.jpg" alt="עמדת קבלה במערכת המועדון" loading="lazy" width="1440" height="900">
+                        </button>
+                        <button type="button" class="media-item" data-caption="דשבורד חי לצוות - מי הגיעה, מי שילמה, מאיזו עמדה">
+                            <img src="assets/cardclub-dashboard.jpg" alt="דשבורד אירוע חי" loading="lazy">
+                        </button>
+                        <button type="button" class="media-item" data-caption="כרטיס חברה ותנועות נקודות (נתוני דמו)">
+                            <img src="assets/cardclub-member.jpg" alt="כרטיס חברת מועדון" loading="lazy">
+                        </button>
+                    </div>
+                    <p class="media-note">מסכי עיצוב עם נתוני דמו - המערכת עצמה פנימית</p>
+
+                    <div class="project-stats">
+                        <div class="stat"><strong>700</strong><span>משתתפות באירוע</span></div>
+                        <div class="stat"><strong>Offline</strong><span>עמדה שעובדת בלי רשת</span></div>
+                        <div class="stat"><strong>QR</strong><span>כרטיס = מפתח בלבד</span></div>
+                        <div class="stat"><strong>Live</strong><span>דשבורד בזמן אמת</span></div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <h4>האתגר</h4>
+                            <p>אלפי לקוחות, אירועים של 100-700 משתתפות - רבות מהן בלי סמארטפון - וצוות משרד לא טכני. הקבלה באירוע נשענה על רשימות ובדיקת תשלום ידנית בכניסה.</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>הפתרון</h4>
+                            <p>כרטיס פלסטיק עם QR שמשמש רק כמפתח - כל הנתונים בענן. עמדת קבלה שממשיכה לעבוד גם כשהרשת נופלת (סורק או ת"ז), מסך ירוק/אדום לפי מצב תשלום, תשלום במקום דרך נדרים פלוס ודשבורד חי עם התראה על כניסה כפולה.</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>התוצאה</h4>
+                            <p>כניסה של שניות לכל משתתפת, כמה עמדות סריקה במקביל, מנוע נקודות נאמנות ויבוא אקסל שאפשר להריץ שוב בלי כפילויות. תעודות הזהות מוצפנות - פרטיות כברירת מחדל.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-stack">
+                        <span>React PWA</span><span>TypeScript</span><span>Fastify</span><span>PostgreSQL</span><span>נדרים פלוס</span><span>Docker</span>
+                    </div>
+                </div>
+
+                <!-- 03 Bakese -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">03</div>
+                        <div class="project-info">
+                            <span class="project-badge">חדש</span>
+                            <h3 class="project-title">בכסה - ערב במגדל דוד</h3>
+                            <p class="project-subtitle">מערכת מכירת כרטיסים לשישה מופעים - הדור השני של "לילה במגדל דוד"</p>
+                            <div class="project-links">
+                                <a href="https://auto.hishtmby.org.il/kdm26/" target="_blank" rel="noopener" class="project-link">
+                                    בכסה 2026
+                                    <span>→</span>
+                                </a>
+                                <a href="https://hishtmby.org.il/ElulEvent25/public/index.php" target="_blank" rel="noopener" class="project-link">
+                                    לילה במגדל דוד 2025
+                                    <span>→</span>
+                                </a>
+                            </div>
+                            <p class="project-role">אפיון, פיתוח וניהול אוטומציות</p>
+                        </div>
+                    </div>
+
+                    <div class="project-media single">
+                        <button type="button" class="media-item media-main" data-caption="דף ההרשמה החי של בכסה">
+                            <img src="assets/bakese-live.jpg" alt="דף ההרשמה לערב בכסה במגדל דוד" loading="lazy" width="1440" height="900">
+                        </button>
+                    </div>
+
+                    <div class="project-stats">
+                        <div class="stat"><strong>6</strong><span>מופעים ב-3 ימים</span></div>
+                        <div class="stat"><strong>750</strong><span>מקומות למופע</span></div>
+                        <div class="stat"><strong>20 דק'</strong><span>שמירת מקום בתשלום</span></div>
+                        <div class="stat"><strong>PDF</strong><span>אישור לכל משתתפת</span></div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <h4>האתגר</h4>
+                            <p>שישה מופעים, כל יום לקהל אחר (בוגרות, מחזורים אחרונים, קהל רחב), רוכשת אחת לכמה משתתפות - והלקח המרכזי מהשנה הקודמת: אסור שיהיה "שילמתי ולא קיבלתי כרטיס".</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>הפתרון</h4>
+                            <p>מנוע זכאות לפי רשימות, שמירת מקומות ל-20 דקות, קליטת סליקה מנדרים פלוס שנרשמת פעם אחת בלבד גם אם נשלחת שוב, הנפקת כל כרטיסי ההזמנה כיחידה אחת ותור מיילים עמיד עם אישור PDF בעברית.</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>התוצאה</h4>
+                            <p>לוח מכירות חי לכל ששת המופעים בלי רענון (כולל מצב TV לחדר הצוות), התראות תפעול על כל תשלום שלא הותאם, ופרטיות מלאה - פרטי המשתתפות לא יוצאים למערכת הסליקה.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-stack">
+                        <span>React</span><span>Fastify</span><span>PostgreSQL</span><span>נדרים פלוס</span><span>SSE</span><span>Cloudflare</span>
+                    </div>
+                </div>
+
+                <!-- 04 CRM -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">04</div>
+                        <div class="project-info">
+                            <span class="project-badge">חדש</span>
+                            <h3 class="project-title">CRM עתודה</h3>
+                            <p class="project-subtitle">ניהול פניות ולידים לארבעה אגפים</p>
+                            <p class="project-role">אפיון, ארכיטקטורה ופיתוח</p>
+                        </div>
+                    </div>
+
+                    <div class="project-media single">
+                        <button type="button" class="media-item media-main media-diagram" data-caption="תרשים זרימת הפניות: קליטה, זיהוי, ניתוב ותפיסה">
+                            <img src="assets/crm-flow.jpg" alt="תרשים זרימת פניות ב-CRM" loading="lazy">
+                        </button>
+                    </div>
+                    <p class="media-note">מערכת פנימית - מוצג תרשים הארכיטקטורה</p>
+
+                    <div class="project-stats">
+                        <div class="stat"><strong>4</strong><span>אגפים</span></div>
+                        <div class="stat"><strong>~40</strong><span>משתמשות בצוות</span></div>
+                        <div class="stat"><strong>אוטומטי</strong><span>זיהוי כפילויות</span></div>
+                        <div class="stat"><strong>API</strong><span>קליטת לידים ממערכות</span></div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <h4>האתגר</h4>
+                            <p>פניות מגיעות מטלפון, מייל, טופס באתר ותשלום - ומתפזרות בין פתקים, תיבות דואר וגיליונות של כ-40 אנשי צוות, רובם לא טכניים.</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>הפתרון</h4>
+                            <p>CRM ייעודי בעברית: מאגר פניות שמזכירה "תופסת", זיהוי כפילויות לפי טלפון, ת"ז או מייל, כרטיס ליד עם ציר זמן ותאריך פעולה הבאה חובה, הרשאות לפי תפקיד, סנכרון קורסים מהאתר וקליטת לידים מהאתר ומבוט הלידים.</p>
+                        </div>
+                        <div class="project-detail">
+                            <h4>התוצאה</h4>
+                            <p>איש קשר אחד לכל אדם על פני כל הפניות, ואף פנייה לא נופלת בין הכיסאות. העיקרון המנחה באפיון: "אינסטגרם, לא SAP" - אם זה לא פשוט, אף אחד לא ישתמש בזה.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-stack">
+                        <span>React</span><span>TypeScript</span><span>Fastify</span><span>PostgreSQL</span><span>Docker</span>
+                    </div>
+                </div>
+
+                <!-- 05 Place to know -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">05</div>
+                        <div class="project-info">
                             <h3 class="project-title">מקום לדעת</h3>
-                            <p class="project-subtitle">תשתית למידה (LMS) ורישום חכם</p>
-                            <a href="https://hishtmby.org.il/student2026/index.php" target="_blank" class="project-link">
-                                צפו במערכת
-                                <span>→</span>
-                            </a>
+                            <p class="project-subtitle">תשתית למידה (LMS), רישום חכם ורכישת קורסים</p>
+                            <div class="project-links">
+                                <a href="https://hishtmby.org.il/student2026/index.php" target="_blank" rel="noopener" class="project-link">
+                                    מערכת הרישום
+                                    <span>→</span>
+                                </a>
+                                <a href="https://hishtmby.org.il/PlaceToKnow/spring.php" target="_blank" rel="noopener" class="project-link">
+                                    רכישת קורסים - אביב
+                                    <span>→</span>
+                                </a>
+                            </div>
                             <p class="project-role">ארכיטקטית מערכת ובניית פתרון מערכתי</p>
                         </div>
                     </div>
-                    
+
                     <div class="project-details">
                         <div class="project-detail">
                             <h4>האתגר</h4>
@@ -1168,7 +1673,7 @@
                         </div>
                         <div class="project-detail">
                             <h4>הפתרון</h4>
-                            <p>פיתוח מערכת מותאמת אישית עם שימוש בכלי AI ואוטומציה, תמחור וזכאות דינמיים, מנגנון קופונים מורכב והנפקה אוטומטית של אישורים והדמיות כרטיס סטודנט דיגיטלי, כולל הזרמת נתונים ל-CRM המשרדי.</p>
+                            <p>פיתוח מערכת מותאמת אישית עם שימוש בכלי AI ואוטומציה, תמחור וזכאות דינמיים, מנגנון קופונים מורכב והנפקה אוטומטית של אישורים וכרטיס סטודנט דיגיטלי, כולל הזרמת נתונים ל-CRM. המערכת הורחבה גם לעונות נוספות, כמו רכישת קורסי האביב.</p>
                         </div>
                         <div class="project-detail">
                             <h4>התוצאה</h4>
@@ -1176,53 +1681,28 @@
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- 06 Landing pages -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-number">02</div>
-                        <div class="project-info">
-                            <h3 class="project-title">לילה במגדל דוד</h3>
-                            <p class="project-subtitle">מערכת מכירת כרטיסים לאירועי ענק</p>
-                            <a href="https://hishtmby.org.il/ElulEvent25/public/index.php" target="_blank" class="project-link">
-                                צפו במערכת
-                                <span>→</span>
-                            </a>
-                            <p class="project-role">אפיון, פיתוח וניהול אוטומציות</p>
-                        </div>
-                    </div>
-                    
-                    <div class="project-details">
-                        <div class="project-detail">
-                            <h4>האתגר</h4>
-                            <p>ניהול מכירת כרטיסים בזמן אמת עם הגבלות קהל יעד (Whitelist) וסנכרון סליקה</p>
-                        </div>
-                        <div class="project-detail">
-                            <h4>הפתרון</h4>
-                            <p>בניית מנוע רישום חכם המחובר ב-Webhooks למערכות סליקה ואוטומציה (Make), כולל דשבורד ניהולי</p>
-                        </div>
-                        <div class="project-detail">
-                            <h4>התוצאה</h4>
-                            <p>מערכת יציבה שטיפלה במאות הזמנות בו-זמנית ללא תקלות, עם שקיפות מלאה לנתונים</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-number">03</div>
+                        <div class="project-number">06</div>
                         <div class="project-info">
                             <h3 class="project-title">דפי נחיתה</h3>
-                            <p class="project-subtitle">סדרת דפי נחיתה לקמפיינים שיווקיים</p>
-                            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px;">
-                                <a href="https://hishtmby.org.il/Tashpav/Atuda/Landing/Html/auto2.html" target="_blank" class="project-link">
+                            <p class="project-subtitle">סדרת דפי נחיתה ממירים לקמפיינים שיווקיים</p>
+                            <div class="project-links">
+                                <a href="https://hishtmby.org.il/Tashpav/Atuda/Landing/Html/atuda_v1.html" target="_blank" rel="noopener" class="project-link">
+                                    עתודה
+                                    <span>→</span>
+                                </a>
+                                <a href="https://hishtmby.org.il/Tashpav/Atuda/Landing/Html/auto2.html" target="_blank" rel="noopener" class="project-link">
                                     Auto Landing
                                     <span>→</span>
                                 </a>
-                                <a href="https://hishtmby.org.il/Tashpav/Atuda/Landing/Html/Salesforce1.html" target="_blank" class="project-link">
+                                <a href="https://hishtmby.org.il/Tashpav/Atuda/Landing/Html/Salesforce1.html" target="_blank" rel="noopener" class="project-link">
                                     Salesforce
                                     <span>→</span>
                                 </a>
-                                <a href="https://hishtmby.org.il/Tashpav/Atuda/Landing/Html/Art" target="_blank" class="project-link">
+                                <a href="https://hishtmby.org.il/Tashpav/Atuda/Landing/Html/Art" target="_blank" rel="noopener" class="project-link">
                                     Art Page
                                     <span>→</span>
                                 </a>
@@ -1230,78 +1710,19 @@
                             <p class="project-role">עיצוב, פיתוח ואופטימיזציה שיווקית</p>
                         </div>
                     </div>
-                    
-                    <div class="project-details">
-                        <div class="project-detail">
-                            <h4>האתגר</h4>
-                            <p>יצירת דפי נחיתה ממירים עבור קמפיינים שיווקיים שונים עם דגש על חוויית משתמש ומקסום המרות</p>
-                        </div>
-                        <div class="project-detail">
-                            <h4>הפתרון</h4>
-                            <p>עיצוב וביצוע של דפי נחיתה רספונסיביים עם אינטגרציה לכלי אוטומציה ומעקב</p>
-                        </div>
-                        <div class="project-detail">
-                            <h4>התוצאה</h4>
-                            <p>דפי נחיתה אופטימליים המשלבים עיצוב מקצועי עם פונקציונליות שיווקית מתקדמת</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-number">04</div>
-                        <div class="project-info">
-                            <h3 class="project-title">עתודה - דף נחיתה</h3>
-                            <p class="project-subtitle">דף נחיתה ממיר לקורסי עתודה</p>
-                            <a href="https://hishtmby.org.il/Tashpav/Atuda/Landing/Html/atuda_v1.html" target="_blank" class="project-link">
-                                צפו בדף
-                                <span>→</span>
-                            </a>
-                            <p class="project-role">עיצוב, פיתוח ואופטימיזציה שיווקית</p>
-                        </div>
-                    </div>
 
                     <div class="project-details">
                         <div class="project-detail">
                             <h4>האתגר</h4>
-                            <p>יצירת דף נחיתה ממיר עבור קורסי עתודה עם דגש על בהירות המסר ומקסום הפניות</p>
+                            <p>יצירת דפי נחיתה ממירים עבור קמפיינים וקורסים שונים, עם דגש על בהירות המסר, חוויית משתמש ומקסום הפניות.</p>
                         </div>
                         <div class="project-detail">
                             <h4>הפתרון</h4>
-                            <p>דף נחיתה רספונסיבי עם מבנה שיווקי מדויק, חיבור לאוטומציה וצבירת לידים</p>
+                            <p>דפי נחיתה רספונסיביים עם מבנה שיווקי מדויק, אינטגרציה לכלי אוטומציה ומעקב וצבירת לידים ישירה.</p>
                         </div>
                         <div class="project-detail">
                             <h4>התוצאה</h4>
-                            <p>דף ממיר עם חוויית משתמש מצוינת המייצר פניות איכותיות לקורסים</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-number">05</div>
-                        <div class="project-info">
-                            <h3 class="project-title">מקום לדעת - אביב</h3>
-                            <p class="project-subtitle">מערכת רכישת קורסים לעונת האביב</p>
-                            <a href="https://hishtmby.org.il/PlaceToKnow/spring.php" target="_blank" class="project-link">
-                                צפו במערכת
-                                <span>→</span>
-                            </a>
-                            <p class="project-role">ארכיטקטית מערכת ובניית פתרון מלא</p>
-                        </div>
-                    </div>
-
-                    <div class="project-details">
-                        <div class="project-detail">
-                            <h4>האתגר</h4>
-                            <p>הפעלת מערכת רכישת קורסים לעונת האביב עם תמחור דינמי וניהול הרשמה מלא</p>
-                        </div>
-                        <div class="project-detail">
-                            <h4>הפתרון</h4>
-                            <p>מערכת מותאמת עם סליקה, ניהול מלאי קורסים ואוטומציה מלאה של תהליך הרישום</p>
-                        </div>
-                        <div class="project-detail">
-                            <h4>התוצאה</h4>
-                            <p>מערכת עצמאית ומהירה לרכישת קורסים עם אישורים אוטומטיים וסנכרון ל-CRM</p>
+                            <p>דפים המשלבים עיצוב מקצועי עם פונקציונליות שיווקית מתקדמת, ומייצרים פניות איכותיות לקורסים.</p>
                         </div>
                     </div>
                 </div>
@@ -1336,6 +1757,8 @@
                 <div class="skill-item">SQL SERVER</div>
                 <div class="skill-item">ADOBE SUITE</div>
                 <div class="skill-item">NEDARIM+</div>
+                <div class="skill-item">REACT</div>
+                <div class="skill-item">POSTGRESQL</div>
                 <div class="skill-item skill-next-tool">
                     <svg class="toolbox-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -1352,7 +1775,7 @@
                 
                 <div class="skill-category">
                     <h3>כלים וטכנולוגיות</h3>
-                    <p>n8n, Make, Figma, Lovable, WordPress, SQL, Adobe Creative Suite, Vibe Coding. שימוש מיומן בכלי AI ואוטומציה לבניית פתרונות מתקדמים.</p>
+                    <p>n8n, Make, Figma, Lovable, WordPress, SQL, Adobe Creative Suite, Vibe Coding. בניית מערכות מלאות עם Claude Code - React, TypeScript, Node.js, PostgreSQL ו-Docker - כולל חיבור ל-OpenAI, Microsoft Teams, Google Drive ונדרים פלוס.</p>
                 </div>
                 
                 <div class="skill-category">
@@ -1553,6 +1976,11 @@
                     <label for="message">הודעה *</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
+
+                <div class="hp-field" aria-hidden="true">
+                    <label for="website">אתר</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
                 
                 <button type="submit" class="btn btn-primary form-submit">שלח</button>
                 
@@ -1561,6 +1989,13 @@
         </div>
     </div>
     
+    <!-- Image Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="תצוגת תמונה">
+        <button type="button" class="lightbox-close" aria-label="סגירה">&times;</button>
+        <img src="" alt="">
+        <p class="lightbox-caption"></p>
+    </div>
+
     <script>
         // Contact Form Functions
         function openContactForm() {
@@ -1586,7 +2021,15 @@
             
             const submitBtn = this.querySelector('.form-submit');
             const messageDiv = document.getElementById('formMessage');
-            
+
+            // Honeypot - bots fill hidden fields, people don't
+            if (document.getElementById('website').value) {
+                messageDiv.className = 'form-message success';
+                messageDiv.textContent = 'הודעתך נשלחה בהצלחה! ניצור איתך קשר בקרוב.';
+                this.reset();
+                return;
+            }
+
             // Get form data
             const formData = {
                 name: document.getElementById('name').value,
@@ -1642,13 +2085,16 @@
         interactiveGrid.style.position = 'absolute';
         interactiveGrid.style.inset = '0';
         interactiveGrid.style.display = 'grid';
-        interactiveGrid.style.gridTemplateColumns = 'repeat(auto-fill, 40px)';
-        interactiveGrid.style.gridTemplateRows = 'repeat(auto-fill, 40px)';
+        // Sized for the largest the window can get, so resizing never leaves a bare edge
+        const cols = Math.ceil(Math.max(window.innerWidth, screen.width) / 40);
+        const rows = Math.ceil(Math.max(hero.offsetHeight, window.innerHeight, screen.height) / 40);
+
+        interactiveGrid.style.gridTemplateColumns = `repeat(${cols}, 40px)`;
+        interactiveGrid.style.gridAutoRows = '40px';
+        interactiveGrid.style.direction = 'ltr';
+        interactiveGrid.style.overflow = 'hidden';
         interactiveGrid.style.zIndex = '5';
         interactiveGrid.style.pointerEvents = 'none';
-        
-        const cols = Math.ceil(window.innerWidth / 40);
-        const rows = Math.ceil(window.innerHeight / 40);
         
         // Create cells
         for (let i = 0; i < rows * cols; i++) {
@@ -1671,8 +2117,8 @@
         
         // Create STAR pattern that appears on hero hover
         const starCells = [];
-        const centerX = Math.floor(cols / 2);
-        const centerY = Math.floor(rows / 3);
+        const centerX = Math.floor(window.innerWidth / 40 / 2);
+        const centerY = Math.floor(window.innerHeight / 40 / 3);
         
         // Simple star shape coordinates relative to center
         const starPattern = [
@@ -1711,6 +2157,36 @@
             }, 1000);
         });
         
+        // Image lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.media-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxCaption.textContent = item.dataset.caption || '';
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        lightbox.addEventListener('click', closeLightbox);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closeContactForm();
+            }
+        });
+
         // Vibe Coding text rotation
         const vibeTexts = ['VIBE CODING', 'CLAUDE CODE', 'CODEX', 'LOVABLE'];
         let vibeIndex = 0;
@@ -1792,4 +2268,3 @@
     </script>
 </body>
 </html>
-```
