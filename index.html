@@ -9,7 +9,7 @@
     <meta property="og:description" content="החלום שלך הוא רק ההתחלה. ארכיטקטית מערכות דיגיטל - AI, אוטומציה ו-Vibe Coding.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="he_IL">
-    <meta property="og:image" content="https://automationchaya-eng.github.io/Portfolio/doit-dashboard.jpg">
+    <meta property="og:image" content="https://automationchaya-eng.github.io/Portfolio/doit-ai.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23000'/%3E%3Cpath fill='%23FF0000' d='M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z'/%3E%3C/svg%3E">
     <title>חיה שטרן | Start-Up - דיגיטל בחמישה כוכבים</title>
@@ -524,6 +524,28 @@
             font-size: 13px;
             color: var(--gray-500);
             margin-bottom: 8px;
+        }
+
+        .media-extra {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .media-extra .media-note {
+            margin-bottom: 0;
+        }
+
+        .media-thumb {
+            flex: 0 0 200px;
+            border: 1px solid var(--black);
+            background: var(--white);
+        }
+
+        .media-thumb img {
+            aspect-ratio: 2.3 / 1;
+            object-fit: contain;
         }
 
         .project-stats {
@@ -1454,14 +1476,14 @@
                     </div>
 
                     <div class="project-media">
-                        <button type="button" class="media-item media-main" data-caption="דשבורד אישי - משימות, סטטוסים והתקדמות">
-                            <img src="doit-dashboard.jpg" alt="דשבורד מערכת Do-it" loading="lazy" width="1440" height="900">
+                        <button type="button" class="media-item media-main" data-caption="ניתוח פגישות AI - מתמלול לסיכום, החלטות וקורסים, קמפיינים ומשימות מוכנים ליצירה בקליק">
+                            <img src="doit-ai.jpg" alt="ניתוח פגישה עם AI במערכת Do-it" loading="lazy" width="976" height="610">
                         </button>
-                        <button type="button" class="media-item" data-caption="לוח שנה עברי-לועזי עם מפגשי קורסים שנוצרו אוטומטית">
+                        <button type="button" class="media-item" data-caption="לוח שנה עברי-לועזי - מפגשי קורסים ומשימות שנוצרו אוטומטית מתבניות">
                             <img src="doit-calendar.jpg" alt="לוח שנה במערכת Do-it" loading="lazy">
                         </button>
-                        <button type="button" class="media-item" data-caption="לוח משימות קנבן עם עדיפויות וחסימות">
-                            <img src="doit-tasks.jpg" alt="לוח משימות במערכת Do-it" loading="lazy">
+                        <button type="button" class="media-item" data-caption="חנות המטבעות - גיימיפיקציה שמתגמלת עבודה שוטפת בשוברי מתנה">
+                            <img src="doit-coins.jpg" alt="חנות המטבעות במערכת Do-it" loading="lazy">
                         </button>
                     </div>
 
@@ -1505,17 +1527,17 @@
                     </div>
 
                     <div class="project-media">
-                        <button type="button" class="media-item media-main" data-caption="עמדת קבלה - סריקת כרטיס ואישור כניסה בשנייה">
-                            <img src="cardclub-kiosk.jpg" alt="עמדת קבלה במערכת המועדון" loading="lazy" width="1440" height="900">
+                        <button type="button" class="media-item media-main" data-caption="דשבורד אירוע חי לצוות - מי הגיעה, מי שילמה ומאיזו עמדה">
+                            <img src="cardclub-dashboard.jpg" alt="דשבורד אירוע חי" loading="lazy" width="1440" height="900">
                         </button>
-                        <button type="button" class="media-item" data-caption="דשבורד חי לצוות - מי הגיעה, מי שילמה, מאיזו עמדה">
-                            <img src="cardclub-dashboard.jpg" alt="דשבורד אירוע חי" loading="lazy">
+                        <button type="button" class="media-item" data-caption="ניהול חברות המועדון - טלפון, נקודות וכרטיס">
+                            <img src="cardclub-members.jpg" alt="רשימת חברות מועדון" loading="lazy">
                         </button>
-                        <button type="button" class="media-item" data-caption="כרטיס חברה ותנועות נקודות (נתוני דמו)">
-                            <img src="cardclub-member.jpg" alt="כרטיס חברת מועדון" loading="lazy">
+                        <button type="button" class="media-item" data-caption="עמדת קבלה - סריקת כרטיס ואישור כניסה בשנייה">
+                            <img src="cardclub-kiosk.jpg" alt="עמדת קבלה במערכת המועדון" loading="lazy">
                         </button>
                     </div>
-                    <p class="media-note">מסכי עיצוב עם נתוני דמו - המערכת עצמה פנימית</p>
+                    <p class="media-note">מערכת פנימית - מוצגים מסכים עם נתוני דמו</p>
 
                     <div class="project-stats">
                         <div class="stat"><strong>700</strong><span>משתתפות באירוע</span></div>
@@ -1550,8 +1572,8 @@
                         <div class="project-number">03</div>
                         <div class="project-info">
                             <span class="project-badge">חדש</span>
-                            <h3 class="project-title">בכסה - ערב במגדל דוד</h3>
-                            <p class="project-subtitle">מערכת מכירת כרטיסים לשישה מופעים - הדור השני של "לילה במגדל דוד"</p>
+                            <h3 class="project-title">מערכת לניהול אירועים</h3>
+                            <p class="project-subtitle">מקצה לקצה - ממכירת הכרטיסים, דרך הסליקה והאישורים ועד הנוכחות בכניסה. בין האירועים שרצו עליה: "בכסה" ו"לילה במגדל דוד"</p>
                             <div class="project-links">
                                 <a href="https://auto.hishtmby.org.il/kdm26/" target="_blank" rel="noopener" class="project-link">
                                     בכסה 2026
@@ -1566,11 +1588,18 @@
                         </div>
                     </div>
 
-                    <div class="project-media single">
-                        <button type="button" class="media-item media-main" data-caption="דף ההרשמה החי של בכסה">
-                            <img src="bakese-live.jpg" alt="דף ההרשמה לערב בכסה במגדל דוד" loading="lazy" width="1440" height="900">
+                    <div class="project-media">
+                        <button type="button" class="media-item media-main" data-caption="לוח מכירות חי (מצב TV) - כל ששת המופעים, מקורות מכירה, רכישות אחרונות וצ'אט צוות בזמן אמת">
+                            <img src="bakese-board.jpg" alt="לוח מכירות חי לערב בכסה" loading="lazy" width="1440" height="900">
+                        </button>
+                        <button type="button" class="media-item" data-caption="דף ההרשמה הציבורי של בכסה">
+                            <img src="bakese-live.jpg" alt="דף ההרשמה לערב בכסה במגדל דוד" loading="lazy">
+                        </button>
+                        <button type="button" class="media-item" data-caption="רשימת כרטיסים למופע - משתתפת, קוד, רוכשת וסטטוס שליחה">
+                            <img src="bakese-roster.jpg" alt="רשימת כרטיסים למופע" loading="lazy">
                         </button>
                     </div>
+                    <p class="media-note">מסכי ניהול עם נתוני דמו</p>
 
                     <div class="project-stats">
                         <div class="stat"><strong>6</strong><span>מופעים ב-3 ימים</span></div>
@@ -1605,18 +1634,29 @@
                         <div class="project-number">04</div>
                         <div class="project-info">
                             <span class="project-badge">חדש</span>
-                            <h3 class="project-title"> CRM מערכת </h3>
+                            <h3 class="project-title">מערכת CRM</h3>
                             <p class="project-subtitle">ניהול פניות ולידים לארבעה אגפים</p>
                             <p class="project-role">אפיון, ארכיטקטורה ופיתוח</p>
                         </div>
                     </div>
 
-                    <div class="project-media single">
-                        <button type="button" class="media-item media-main media-diagram" data-caption="תרשים זרימת הפניות: קליטה, זיהוי, ניתוב ותפיסה">
-                            <img src="crm-flow.jpg" alt="תרשים זרימת פניות ב-CRM" loading="lazy">
+                    <div class="project-media">
+                        <button type="button" class="media-item media-main" data-caption="כרטיס ליד - שלבי התהליך, פעולה הבאה וציר זמן של שיחות, מיילים והערות">
+                            <img src="crm-lead.jpg" alt="כרטיס ליד ב-CRM עתודה" loading="lazy" width="1440" height="900">
+                        </button>
+                        <button type="button" class="media-item" data-caption="דשבורד מזכירה - תזכורות להיום, פניות ממתינות ולידים פעילים">
+                            <img src="crm-dashboard.jpg" alt="דשבורד מזכירה ב-CRM" loading="lazy">
+                        </button>
+                        <button type="button" class="media-item" data-caption="מאגר הפניות - תפיסה, העברה וסינון לפי מקור ואגף">
+                            <img src="crm-pool.jpg" alt="מאגר פניות ב-CRM" loading="lazy">
                         </button>
                     </div>
-                    <p class="media-note">מערכת פנימית - מוצג תרשים הארכיטקטורה</p>
+                    <div class="media-extra">
+                        <button type="button" class="media-item media-thumb" data-caption="תרשים זרימת הפניות: קליטה, זיהוי כפילויות, ניתוב לאגף ותפיסה">
+                            <img src="crm-flow.jpg" alt="תרשים זרימת פניות ב-CRM" loading="lazy">
+                        </button>
+                        <p class="media-note">מערכת פנימית - מוצגים מסכים עם נתוני דמו. בתמונה הקטנה: תרשים זרימת הפניות שתוכנן באפיון.</p>
+                    </div>
 
                     <div class="project-stats">
                         <div class="stat"><strong>4</strong><span>אגפים</span></div>
@@ -1802,7 +1842,7 @@
             
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-years">שנה אחרונה</div>
+                    <div class="timeline-years">שנתיים וחצי</div>
                     <h3 class="timeline-title">מומחית אוטומציה</h3>
                     <p class="timeline-desc">בוגרת אוטומסטר והטמעת תהליכי עבודה חכמים, שימוש ב-AI ו-Vibe Coding לבניית מערכות מתקדמות</p>
                 </div>
